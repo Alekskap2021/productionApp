@@ -2,11 +2,9 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
-  extends: [
-    "plugin:react/recommended",
-    "airbnb",
-  ],
+  extends: ["plugin:react/recommended", "airbnb"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -35,7 +33,7 @@ module.exports = {
     "max-len": [
       "error",
       {
-         code: 100,
+        code: 100,
         tabWidth: 4,
         comments: 80,
         ignorePattern: "",
@@ -45,7 +43,7 @@ module.exports = {
         ignoreTemplateLiterals: true,
         ignoreRegExpLiterals: true,
       },
-	  ],
+    ],
   },
   globals: {
     __IS_DEV__: true,
