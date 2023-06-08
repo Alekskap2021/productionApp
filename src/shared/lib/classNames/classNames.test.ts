@@ -1,4 +1,4 @@
-import { classNames } from "./classNames";
+import { classNames } from "shared/lib/classNames/classNames";
 
 describe("classNames", () => {
   test("with only one param", () => {
@@ -27,6 +27,7 @@ describe("classNames", () => {
   test("with mods undefined", () => {
     const expected = "someClass class1 class2 hovered";
     expect(
+      // @ts-ignore
       classNames("someClass", { hovered: true, scrollable: undefined }, ["class1", "class2"])
     ).toBe(expected);
   });
