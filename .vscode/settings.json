@@ -1,3 +1,11 @@
 {
-  "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"]
+"i18n-ally.localesPaths": [
+	"public/locales",
+	"src/shared/config/i18n"
+],
+"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+"editor.formatOnSave": true,
+"editor.formatOnPaste": true,
+"eslint.format.enable": true,
+"eslint.codeActionsOnSave.rules": null
 }

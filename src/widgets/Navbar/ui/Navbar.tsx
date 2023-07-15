@@ -5,8 +5,8 @@ import cls from './Navbar.module.scss';
 interface NavbarProps {
   className?: string;
 }
-export const Navbar = ({ className }: NavbarProps) => (
-    <div className={classNames(cls.Navbar, {}, [className])}>
+export function Navbar({ className }: NavbarProps) {
+    return <div className={classNames(cls.Navbar, {}, [className])}>
         <div className={cls.links}>
             <AppLink to="/" className={cls.mainLink} theme={AppLinkTheme.SECODARY}>
                 Главная
@@ -16,6 +16,6 @@ export const Navbar = ({ className }: NavbarProps) => (
             </AppLink>
         </div>
     </div>
-);
+}
 
 export default Navbar;

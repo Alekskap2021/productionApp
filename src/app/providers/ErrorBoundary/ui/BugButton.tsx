@@ -1,15 +1,15 @@
-import { FC, useEffect, useState } from "react";
-import Button from "shared/ui/Button/Button";
+import { FC, useEffect, useState } from 'react';
+import Button from 'shared/ui/Button/Button';
 
 // Компонент для тестирования ErrorBoundary
 export const BugButton: FC = () => {
-  const [error, setError] = useState<boolean>(false);
+    const [error, setError] = useState<boolean>(false);
 
-  const throwError = () => setError(true);
+    const throwError = () => setError(true);
 
-  useEffect(() => {
-    if (error) throw new Error();
-  }, [error]);
+    useEffect(() => {
+        if (error) throw new Error();
+    }, [error]);
 
-  return <Button onClick={throwError}>Throw Error</Button>;
+    return <Button onClick={throwError}>Throw Error</Button>;
 };
