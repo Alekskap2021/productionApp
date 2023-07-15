@@ -5,48 +5,41 @@ module.exports = {
         jest: true,
     },
     extends: [
-        "plugin:react/recommended",
-        "airbnb",
-        "prettier",
-        "plugin:i18next/recommended",
+        'plugin:react/recommended',
+        'airbnb',
+        'prettier',
+        'plugin:i18next/recommended',
     ],
-    parser: "@typescript-eslint/parser",
+    parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
-        ecmaVersion: "latest",
-        sourceType: "module",
+        ecmaVersion: 'latest',
+        sourceType: 'module',
     },
-    plugins: ["react", "@typescript-eslint", "prettier", "i18next"],
+    plugins: ['react', '@typescript-eslint', 'prettier', 'i18next'],
     rules: {
-        "react/jsx-indent": [2, 4],
-        "react/jsx-indent-props": [2, 4],
-        indent: [2, 4],
-        "react/jsx-filename-extension": [
-            2,
-            { extensions: [".js", ".jsx", ".tsx"] },
+        'react/jsx-indent': [2, 4],
+        'react/jsx-indent-props': [2, 4],
+
+        'react/jsx-filename-extension': [
+            'error',
+            { extensions: ['.js', '.jsx', '.tsx'] },
         ],
-        "import/no-unresolved": "off",
-        "import/prefer-default-export": "off",
-        "no-unused-vars": "warn",
-        "react/react-in-jsx-scope": "off",
-        "react/jsx-props-no-spreading": "warn",
-        "react/require-default-props": "off",
-        "react/function-component-definition": "off",
-        "no-shadow": "off",
-        "import/extensions": "off",
-        "import/no-extraneous-dependencies": "off",
-        "no-underscore-dangle": "off",
-        "no-unused-expressions": "off",
-        "i18next/no-literal-string": ["warn", { markupOnly: true }],
-        "max-len": [
-            "error",
+
+        'i18next/no-literal-string': [
+            'warn',
+            { markupOnly: true, ignoreAttribute: ['data-testid'] },
+        ],
+
+        'max-len': [
+            'error',
             {
                 code: 100,
                 tabWidth: 4,
                 comments: 80,
-                ignorePattern: "",
+                ignorePattern: '',
                 ignoreComments: true,
                 ignoreUrls: true,
                 ignoreStrings: true,
@@ -54,8 +47,33 @@ module.exports = {
                 ignoreRegExpLiterals: true,
             },
         ],
+
+        'no-unused-vars': 'warn',
+        'react/jsx-props-no-spreading': 'warn',
+
+        'react/require-default-props': 'off',
+        'react/function-component-definition': 'off',
+        'no-shadow': 'off',
+        'import/extensions': 'off',
+        'import/no-extraneous-dependencies': 'off',
+        'no-underscore-dangle': 'off',
+        'no-unused-expressions': 'off',
+        'import/no-unresolved': 'off',
+        'import/prefer-default-export': 'off',
+        'react/react-in-jsx-scope': 'off',
     },
+
     globals: {
         __IS_DEV__: true,
     },
+
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 }
