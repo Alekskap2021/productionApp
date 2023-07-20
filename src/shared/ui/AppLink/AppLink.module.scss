@@ -1,12 +1,16 @@
 .AppLink {
-  color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .primary {
-  color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .seconady {
-  color: var(--inverted-secondary-color);
-  margin-bottom: 20px;
+    color: var(--inverted-secondary-color);
+    margin-bottom: 20px;
+}
+
+.red {
+    color: red;
 }
