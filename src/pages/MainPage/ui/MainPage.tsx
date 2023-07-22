@@ -5,9 +5,7 @@ function MainPage() {
     const { t } = useTranslation('main');
     return (
         <div className="">
-            <BugButton />
-            {' '}
-            {t('Главная страница')}
+            <BugButton /> {t('Главная страница')}
         </div>
     );
 }
