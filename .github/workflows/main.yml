@@ -40,7 +40,7 @@ jobs:
               if: always()
 
             - name: Building storybook
-              run: npm run sb:build
+              run: npm run build:sb
               if: always()
 
             - name: Screenshot testing
