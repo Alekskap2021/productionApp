@@ -1,8 +1,9 @@
 {
-  "extends": "stylelint-config-standard-scss",
-  "ignoreFiles": ["build/css/**.css"],
-  "rules": {
-    "indentation": [4],
-    "selector-class-pattern": null
-  }
+    "extends": "stylelint-config-standard-scss",
+    "ignoreFiles": ["build/css/**.css"],
+    "rules": {
+        "string-quotes": "single",
+        "indentation": [4],
+        "selector-class-pattern": null
+    }
 }
