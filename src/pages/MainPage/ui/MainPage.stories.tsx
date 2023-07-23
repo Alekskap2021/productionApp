@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta, ArgTypes } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StateDecorator } from 'shared/config/storybook/StateDecorator';
 import MainPage from './MainPage';
 
 export default {
@@ -22,7 +23,8 @@ const Template: ComponentStory<typeof MainPage> = (
 
 export const Light = Template.bind({});
 Light.args = {};
+Light.decorators = [StateDecorator()];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StateDecorator()];

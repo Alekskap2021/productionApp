@@ -24,7 +24,7 @@ export function Navbar({ className }: NavbarProps) {
                 onClick={onToggleModal}
                 theme={ButtonTheme.CLEAR_INVERTED}
             >
-                {t('Войти')}
+                {t('SingIn')}
             </Button>
 
             <Modal isOpen={isAuthModal} onClose={onToggleModal}>

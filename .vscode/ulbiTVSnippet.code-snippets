@@ -1,28 +1,44 @@
 {
-  "rct": {
-    "scope": "typescriptreact",
-    "prefix": "qwe",
-    "body": [
-      " import { FC } from 'react'",
-      " import { classNames } from 'shared/lib/classNames/classNames';",
-      " import s from './${TM_FILENAME_BASE}.module.scss'",
-      "",
-      "const cn = classNames.bind(s)",
-      "",
-      " interface ${TM_FILENAME_BASE}Props {",
-      " className?: string;",
-      " }",
-      "",
-      " export const ${TM_FILENAME_BASE}: FC<${TM_FILENAME_BASE}Props> = (props) => {",
-      " const { className } = props",
-      "",
-      " return (",
-      " <div className={cn(s.${TM_FILENAME_BASE}, {} , [className])}>",
-      " </div>",
-      " );",
-      " };",
-      ""
-    ],
-    "description": "rct"
-  }
+    "rct": {
+        "scope": "typescriptreact",
+        "prefix": "qwe",
+        "body": [
+            " import { FC } from 'react'",
+            " import { classNames } from 'shared/lib/classNames/classNames';",
+            " import s from './${TM_FILENAME_BASE}.module.scss'",
+            "",
+            "const cn = classNames.bind(s)",
+            "",
+            " interface ${TM_FILENAME_BASE}Props {",
+            " className?: string;",
+            " }",
+            "",
+            " export const ${TM_FILENAME_BASE}: FC<${TM_FILENAME_BASE}Props> = (props) => {",
+            " const { className } = props",
+            "",
+            " return (",
+            " <div className={cn(s.${TM_FILENAME_BASE}, {} , [className])}>",
+            " </div>",
+            " );",
+            " };",
+            ""
+        ],
+        "description": "rct"
+    },
+
+    "test": {
+        "scope": "typescript",
+        "prefix": "tst",
+
+        "body": [
+            " import { ${TM_FILENAME_BASE/(\\.test)//} } from './${TM_FILENAME_BASE/(\\.test)//}'",
+            "",
+            "describe('${TM_FILENAME_BASE/(\\.test)//}', () => {",
+            "test('', () => {",
+            "expect().toEqual();",
+            "});",
+            "});"
+        ],
+        "description": "rct"
+    }
 }
