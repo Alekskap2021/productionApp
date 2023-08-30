@@ -15,13 +15,12 @@ interface ModalProps {
 
 export const Modal: FC<ModalProps> = (props) => {
     const { className, children, isOpen, onClose } = props;
-    const { theme } = useTheme();
+    // const { theme } = useTheme();
 
     const mods: Record<string, boolean> = {
         [s.opened]: isOpen,
-        [s[theme]]: true,
     };
-
+    //
     const closeHandler = useCallback(() => {
         if (onClose) onClose();
     }, [onClose]);
