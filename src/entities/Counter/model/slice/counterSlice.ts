@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { CounterShcema } from 'entities/Counter/model/types/CounterShcema';
+import { CounterShcema } from '../types/CounterShcema';
 
 const initialState: CounterShcema = {
     value: 0,

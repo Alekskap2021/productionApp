@@ -1,7 +1,6 @@
-import { FC, ReactNode, MouseEvent, useEffect, useCallback } from 'react';
+import { FC, ReactNode, useEffect, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
-import { useTheme } from 'app/providers/ThemeProvider';
 import s from './Modal.module.scss';
 
 const cn = classNames.bind(s);
@@ -10,12 +9,19 @@ interface ModalProps {
     className?: string;
     children: ReactNode;
     isOpen: boolean;
+    lazy?: boolean;
     onClose?: () => void;
 }
 
 export const Modal: FC<ModalProps> = (props) => {
-    const { className, children, isOpen, onClose } = props;
+    const { className, children, isOpen, onClose, lazy } = props;
     // const { theme } = useTheme();
+
+    const [isMounted, setIsMounted] = useState<boolean>(false);
+
+    useEffect(() => {
+        isOpen && setIsMounted(true);
+    }, [isOpen]);
 
     const mods: Record<string, boolean> = {
         [s.opened]: isOpen,
@@ -39,6 +45,8 @@ export const Modal: FC<ModalProps> = (props) => {
 
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [isOpen, handleKeyDown]);
+
+    if (lazy && !isMounted) return null;
 
     return (
         <Portal>
